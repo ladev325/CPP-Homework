@@ -122,7 +122,7 @@ int main() {
 
 	 fseek(file, pos, SEEK_SET);
 	 fread(&n, sizeof(int), 1, file);
-	 cout << "N = " << n;
+	 cout << "N = ";
 	 fclose(file);
 	}
 	else cout << "Error";
