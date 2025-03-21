@@ -3,129 +3,116 @@
 
 using namespace std;
 
+/*void createTriangleArray(int rows) {
+ char** array = new char*[rows];
+
+ for (int i = 0; i < rows; i++) {
+  int this_cols = rows / 2 - abs(rows / 2 - i) + 1;
+  array[i] = new char[this_cols];
+ }
+
+ for (int i = 0; i < rows; i++) {
+  int this_cols = rows / 2 - abs(rows / 2 - i) + 1;
+  for (int j = 0; j < this_cols; j++) {
+   array[i][j] = '*';
+  }
+ }
+
+
+ for (int i = 0; i < rows; i++) {
+   int this_cols = rows / 2 - abs(rows / 2 - i) + 1;
+   for (int j = 0; j < this_cols; j++) {
+    cout << array[i][j];
+   }
+   cout << endl;
+ }
+
+ for (int i = 0; i < rows; i++)
+  delete[] array[i];
+ delete[] array;
+ if (rows % 2 == 0) cout << endl <<  rows << " is a bad number for a good triangle. Try " << rows + 1 << endl;
+}*/
+
 int main() {
-	/*int a = 10;
-	int b = 100;
+	/*int cols = 10;
+    int rows = 10;
 
-	FILE* file;
-	FILE* file1;
-	FILE* file2;
-	fopen_s(&file, "file.bin", "wb");
-	fopen_s(&file1, "file1.bin", "wb");
-	fopen_s(&file2, "file2.bin", "wb");
+    int** array = new int*[rows];
 
-	if (file != nullptr) {
-	 for (int i = 0; i < 15; i ++) {
-	  int number = a + rand() % (b - a + 1);
-	  fwrite(&number, sizeof(int), 1, file);
-	 }
-	  fclose(file);
-	}
+    for (int i = 0; i < rows; i++) {
+     array[i] = new int[cols];
+    }
 
-	if (file1 != nullptr) {
-	 float number;
-	 cout << "Enter float number:";
-	 cin >> number;
-	 for (int i = 0; i < 5; i ++) {
-	  fwrite(&number, sizeof(float), 1, file1);
-	 }
-	  fclose(file1);
-	}
+    for (int i = 0; i < rows; i++) {
+     for (int j = 0; j < cols; j++) {
+      array[i][j] = 1;
+     }
+    }
 
-	if (file2 != nullptr) {
-	 char word[20];
-	 cout << "Enter a word:";
-	 cin >> word;
-	 int size = strlen(word);
-	 for (int i = 0; i < 5; i ++) {
-	  fwrite(&size, sizeof(int), 1, file2);
-	  fwrite(&word, sizeof(char), size, file2);
-	 }
-	  fclose(file2);
-	}*/
+    int s1 = 0;
+    int s2 = 0;
+    cout << "Enter s1, then s2: ";
+    cin >> s1 >> s2;
 
-	/*int d = 0;
-	cout << "Enter d: ";
-	cin >> d;
-
-	FILE* file;
-	fopen_s(&file, "file.bin", "rb");
-
-	if (file != nullptr) {
-	int n = 0;
-	 while(fread(&n, sizeof(int), 1, file) == 1) {
-	  cout << n << endl;
-	 }
-	 fclose(file);
-	}
-
-	else cout << "Error";*/
-
-	/*FILE* file;
-	fopen_s(&file, "file.bin", "rb");
-	int* arr1 = nullptr;
-	int* arr2 = nullptr;
-	int count1 = 0;
-	int count2 = 0;
-
-	if (file != nullptr) {
-	 int n = 0;
-	 while(fread(&n, sizeof(int), 1, file) == 1) {
-	  if(n > 0) {
-	   count1++;
-	   int* tmp = new int[count1];
-	   for (int i = 0; i < count1 - 1; i++)
-	    tmp[i] = arr1[i];
-	   tmp[count1 - 1] = n;
-	   delete[] arr1;
-	   arr1 = tmp;
-	  }
-
-	  if(n % 2 == 0) {
-	   count2++;
-	   int* tmp = new int[count2];
-	   for (int i = 0; i < count2 - 1; i++)
-	    tmp[i] = arr2[i];
-	   tmp[count2 - 1] = n;
-	   delete[] arr2;
-	   arr2 = tmp;
-	  }
-	 }
-
-	  fclose(file);
-	}
-	else cout << "Error";
-
-	for (int i = 0; i < count1; i++) cout << arr1[i] << " ";
-	cout << endl;
-	for (int i = 0; i < count2; i++) cout << arr2[i] << " ";
-	delete[] arr1;
-	delete[] arr2;*/
+    for (int j = 0; j < cols; j++) {
+     array[s1][j] = 0;
+     array[s2][j] = 0;
+    }
 
 
-	FILE* file;
-	fopen_s(&file, "9.bin", "rb");
-	if (file != nullptr) {
-	 int I = 0, J = 0;
-	 cout << "Input i from 1: ";
-	 cin >> I;
-	 cout << "Input j from 1: ";
-	 cin >> J;
+    for (int i = 0; i < rows; i++) {
+     for (int j = 0; j < cols; j++) {
+      cout << array[i][j] << " ";
+     }
+      cout << endl;
+    }
 
-	 int n = 0;
-	 int cols = 0;
-	 int col_counter = 0;
-	 fread(&cols, sizeof(int), 1, file);
+    for (int i = 0; i < cols; i++)
+     delete[] array[i];
+    delete[] array;*/
 
-	 int pos = (I - 1) * cols * sizeof(int) + (J - 1) * sizeof(int);
-	 pos += sizeof(int);
+    /*int cols = 10;
+    int rows = 10;
 
-	 fseek(file, pos, SEEK_SET);
-	 fread(&n, sizeof(int), 1, file);
-	 cout << "N = ";
-	 fclose(file);
-	}
-	else cout << "Error";
+    int** array = new int*[rows];
+
+    for (int i = 0; i < rows; i++) {
+     array[i] = new int[cols];
+    }
+
+    for (int i = 0; i < rows; i++) {
+     for (int j = 0; j < cols; j++) {
+      array[i][j] = i;
+     }
+    }
+
+
+    if (rows > 1) {
+     for (int j = 0; j < cols; j++) {
+      int first = array[0][j];
+
+      for (int i = 1; i < rows; i++) {
+       array[i - 1][j] = array[i][j];
+      }
+       array[rows - 1][j] = first;
+     }
+    }
+
+
+    for (int i = 0; i < rows; i++) {
+     for (int j = 0; j < cols; j++) {
+      cout << array[i][j] << " ";
+     }
+      cout << endl;
+    }
+
+    for (int i = 0; i < rows; i++)
+     delete[] array[i];
+    delete[] array;*/
+
+    //createTriangleArray(21);
+
+
 
 	return 0;
 }
