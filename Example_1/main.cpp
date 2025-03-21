@@ -3,7 +3,7 @@
 
 using namespace std;
 
-/*void createTriangleArray(int rows) {
+void createTriangleArray(int rows) {
  char** array = new char*[rows];
 
  for (int i = 0; i < rows; i++) {
@@ -31,7 +31,7 @@ using namespace std;
   delete[] array[i];
  delete[] array;
  if (rows % 2 == 0) cout << endl <<  rows << " is a bad number for a good triangle. Try " << rows + 1 << endl;
-}*/
+}
 
 int main() {
 	/*int cols = 10;
@@ -110,7 +110,7 @@ int main() {
      delete[] array[i];
     delete[] array;*/
 
-    //createTriangleArray(21);
+    createTriangleArray(21);
 
 
 
